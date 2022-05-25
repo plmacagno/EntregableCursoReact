@@ -1,0 +1,36 @@
+.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+    background-color: rgb(162, 207, 188);
+    color: #054723;
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    overflow: hidden;
+    max-width: 345px;
+    align-content: center;
+}
+
+.css-18k87ye-MuiTypography-root {
+    background-color: rgb(162, 207, 188);
+    color: #054723;
+    margin: 0;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    margin-bottom: 0.35em;
+}
+
+
+.css-e784if-MuiTypography-root {
+    background-color: rgb(162, 207, 188);
+    color: #054723;
+    margin: 0;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+}
+

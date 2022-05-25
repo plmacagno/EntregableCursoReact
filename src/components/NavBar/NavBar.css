@@ -1,0 +1,25 @@
+.header {
+        background: linear-gradient(0deg, #22c1c3 0%, #fdbb2d 100%); 
+
+}
+
+.header ul{
+    display:flex ;
+    list-style: none;
+ 
+}
+ 
+.container-logo {
+    width: 200px;
+}
+.container-logo img {
+    margin-left: 10px;
+    width: 100%;
+}
+
+button {
+    color: darkblue;
+    margin-left: 30px;
+}
+
+
