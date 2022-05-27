@@ -5,13 +5,18 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCount/ItemCount'
 
+  
+  const Item = ( { imagen, titulo, precio, stock } ) => {
+    
+      
+      const onAdd = (cantidad) => {
+       alert ('Compraste' + ' ' + cantidad + ' ' + 'Productos')
 
-    const Tarjeta = ({imagen, titulo, precio, stock, descr, id, count}) => {
-     
-
-             return ( 
+    } 
+          return ( 
+          <div>        
               <Card sx={{ maxWidth: 345 }}>
-                <div className="cardVarias"> 
+               
                   <CardMedia
                     component="img"
                     height="300"
@@ -26,14 +31,14 @@ import ItemCount from '../ItemCount/ItemCount'
                       Precio $ {precio}
                     </Typography>
                     <Typography variant="body2" >
-                    Stock actual : {stock-count}
+                    Stock actual : {stock}
                     </Typography>
                   </CardContent>
-                  <ItemCount />
-          
-                </div>
+                  <ItemCount stock={ stock } onAdd={ onAdd } />
+                         
                </Card>
-            );
-        }
+            </div>
+         );
+  }
 
-export default Tarjeta          
+export default Item          

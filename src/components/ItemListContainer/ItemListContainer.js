@@ -1,4 +1,4 @@
-import Tarjeta from '../Card/Card'
+import Item from '../Item/Item'
 import { Grid } from '@mui/material';
 import { useState, useEffect } from 'react';
 import productos from '../ItemList/ItemList'
@@ -41,7 +41,7 @@ const ItemListContainer = ({titu}) => {
                     products.map( ({imagen, titulo, precio, stock, descr, id}) => {
                         return(
                             <Grid item md={3} key={id}>
-                             <Tarjeta imagen={imagen} titulo={titulo} precio={precio} stock={stock} descr={descr} id={id}/>
+                             <Item imagen={imagen} titulo={titulo} precio={precio} stock={stock} descr={descr} id={id}/>
                           </Grid>  
                                                            
                         )

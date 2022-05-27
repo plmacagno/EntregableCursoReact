@@ -4,6 +4,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
+
 function App(productos) {
 
   let styleCustom ={
@@ -14,10 +15,15 @@ function App(productos) {
   
   return (
     <div className="App" style={styleCustom} >
+     
         <NavBar />
+             
         <ItemListContainer title={'Nuestros Productos'} products={productos}/>
              
-         <ItemDetailContainer />     
+         <ItemDetailContainer />  
+        
+         
+      
      </div>
   );
 }
