@@ -1,37 +1,36 @@
 import Item from '../Item/Item'
 import { Grid } from '@mui/material';
-import { useState, useEffect } from 'react';
-import productos from '../ItemList/ItemList'
+import { useEffect, useState } from 'react';
+import productos from '../Data/ProductsMock';
+
 
 const ItemListContainer = ({titu}) => {
    
-    const [products, setProducts] = useState([])
-
-
-
-    const getItem = () => {
-    return new Promise ( (resolve, reject) => {
-        setTimeout(() => {
-            resolve (productos)
-        }, 2000)
-    })
-    }
-    useEffect( () => {
-        getItem()
-        .then( (res) => {
-            setProducts(res)
        
-    })
-    .catch ( (err) => {
-       
-    })
-    .finally ( () => {
-       
-    })
-    },[])
+        const [products, setProducts] = useState([])
     
-   
-
+        const getItem = () => {
+            return new Promise ( (resolve, reject) => {
+                setTimeout(() => {
+                    resolve (productos)
+            }, 2000)
+            })
+    }
+        useEffect( () => {
+            
+          getItem()
+          .then( (res) => {
+              setProducts(res)
+       
+        })
+        .catch ( (err) => {
+       
+        })
+        .finally ( () => {
+       
+        })
+        },[])   
+  
 
     return (
         <>
@@ -40,8 +39,15 @@ const ItemListContainer = ({titu}) => {
                 {
                     products.map( ({imagen, titulo, precio, stock, descr, id}) => {
                         return(
-                            <Grid item md={3} key={id}>
-                             <Item imagen={imagen} titulo={titulo} precio={precio} stock={stock} descr={descr} id={id}/>
+                            <Grid item md={4} key={products.id}>
+                             <Item 
+                                imagen={imagen} 
+                                titulo={titulo} 
+                                precio={precio}
+                                stock={stock} 
+                                descr={descr}
+                                id={id}
+                            />
                           </Grid>  
                                                            
                         )

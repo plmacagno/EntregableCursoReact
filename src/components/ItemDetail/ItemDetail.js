@@ -4,20 +4,24 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
+
 const ItemDetail = ({data}) => {
-    return (
-        <div>
-            Informacion del producto
-           
+  
+      return (
+      
+        <div className='mas-info'>
+            <h2>INFORMACION DETALLADA DEL PRODUCTO</h2>
+            
             <Card sx={{ maxWidth: 880 }}>
-                <div className="cardProducto" > 
+            
                 <CardMedia 
                   component="img"
-                  height="900"
-                  image={data.imagen}
-                  alt="Imagen Producto"
-                />
-                <CardContent>
+                  height="500"
+                  image={`/${data.imagen}`}
+                  alt="Imagen Producto" 
+                >  
+                </CardMedia>
+                <CardContent className="info-baja">
                   <Typography gutterBottom variant="h6" component="div">
                     {data.titulo}
                   </Typography>
@@ -25,10 +29,11 @@ const ItemDetail = ({data}) => {
                     {data.descr}
                   </Typography>
                 </CardContent>  
-                </div>
+                
             </Card>
               
         </div>
+       
     )
 }
 

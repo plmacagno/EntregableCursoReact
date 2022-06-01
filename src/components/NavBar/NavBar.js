@@ -1,30 +1,80 @@
 import './NavBar.css';
+import Button from '@mui/material/Button';
+import { useState } from 'react';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Carro from '../CartWidget/cartwidget';
 
 const NavBar = () => {
+      const [anchorEl, setAnchorEl] = useState(null);
+   const open = Boolean(anchorEl);
+   const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+   };
+   const handleClose = () => {
+      setAnchorEl(null);
+   };
+
+   const categorias = ["box" , "individual"]
+
     return (
         
         <AppBar position="static">
             <Toolbar className="header">
                 <div className="container-logo">
-                <img src="./logogaema.png" /> 
+                <Link to ="/"><img src='/logogaema.png' alt="Logo" /> </Link>
                     <ul>
                          <li>
-                            <button  style={{backgroundColor: "lightgreen"}} >Inicio</button> 
+                            <Button 
+                              style={{backgroundColor: "lightblue" }}
+                            >
+                              <Link to ="/">Inicio</Link>
+                           </Button> 
                         </li>
                          <li>
-                            <button>Productos</button> 
+                             
+                            <Button
+                              id="basic-button"
+                              aria-controls={open ? 'basic-menu' : undefined}
+                              aria-haspopup="true"
+                              aria-expanded={open ? 'true' : undefined}
+                              onClick={handleClick}
+                              style={{backgroundColor: "lightblue" }}
+                              >
+                              Productos
+                              </Button>
+                              <Menu
+                              id="basic-menu"
+                              anchorEl={anchorEl}
+                              open={open}
+                              onClose={handleClose}
+                              MenuListProps={{
+                                 'aria-labelledby': 'basic-button',
+                              }}
+                              >
+
+                              {categorias.map( (cat) => {   
+                                 return <MenuItem onClick={handleClose}><Link to={`/products/${cat}`}>{cat}</Link></MenuItem>
+                              })}
+                              
+                           </Menu>
                          </li>
                          <li>
-                            <button>Boxes</button> 
+                            <Button
+                              style={{backgroundColor: "lightblue"}}
+                            >
+                               <Link to ="/Nosotros">Nosotros</Link> 
+                             </Button> 
                          </li>
                          <li>
-                            <button>Nosotros</button> 
-                         </li>
-                         <li>
-                            <button>Contacto</button> 
+                            <Button
+                              style={{backgroundColor: "lightblue"}}
+                            >
+                            <Link to ="/Contacto">Contacto</Link> 
+                            </Button> 
                          </li>
                          <li>
                           <Carro />

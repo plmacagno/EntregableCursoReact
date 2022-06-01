@@ -1,30 +1,30 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar'
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Inicio from  '../src/Pages/Inicio'
+import ListProducts from './Pages/ListProducts'
+import Nosotros from '../src/Pages/Nosotros'
+import Contacto from '../src/Pages/Contacto'
+import Detalle from './Pages/Detalle';
 
+function App() {
 
-
-function App(productos) {
-
-  let styleCustom ={
-    color : "green",
-  
-  }
-
+ 
   
   return (
-    <div className="App" style={styleCustom} >
-     
+   
+      <BrowserRouter>
         <NavBar />
-             
-        <ItemListContainer title={'Nuestros Productos'} products={productos}/>
-             
-         <ItemDetailContainer />  
-        
-         
-      
-     </div>
+        <Routes>
+          <Route exact path='/' element={<Inicio />} />
+          <Route exact path='/Nosotros' element={<Nosotros />} />
+          <Route exact path='/Contacto' element={<Contacto />} /> 
+          <Route exact path='/product/:id' element={<Detalle />} /> 
+          <Route exact path='/products/:category' element={<ListProducts />} /> 
+          <Route exact path='*' element={<h1> Error 404 - Pagina no encontrada</h1>} /> 
+        </Routes>
+      </BrowserRouter>
+     
   );
 }
 

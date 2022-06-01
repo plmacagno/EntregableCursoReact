@@ -34,3 +34,24 @@
     letter-spacing: 0.01071em;
 }
 
+.mas-info {
+      
+    text-align: center;
+    color: green;
+   
+}
+
+.mas-info img {
+
+    width: 50%;
+    justify-content: center;
+     margin: 0px 450px; 
+    align-items: center;
+}
+
+.info-baja {
+    justify-content: center;
+    margin-left:  450px;
+    align-items: center;
+} 
+

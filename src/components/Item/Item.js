@@ -1,28 +1,35 @@
-
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import ItemCount from '../ItemCount/ItemCount'
+import ItemCount from '../ItemCount/ItemCount';
+import {Link} from 'react-router-dom';
+
 
   
-  const Item = ( { imagen, titulo, precio, stock } ) => {
+  const Item = ( { imagen, titulo, precio, stock, id } ) => {
     
-      
       const onAdd = (cantidad) => {
-       alert ('Compraste' + ' ' + cantidad + ' ' + 'Productos')
+        alert ('Compraste' + ' ' + cantidad + ' ' + 'Productos')
+      
+       } 
 
-    } 
-          return ( 
+         return ( 
           <div>        
               <Card sx={{ maxWidth: 345 }}>
-               
+                <CardContent>
                   <CardMedia
                     component="img"
                     height="300"
-                    image={imagen}
+                    image={`/${imagen}`}
                     alt="Imagen Producto"
                   />
+                   <Button variant={'transparent'} className="card-btn-details">
+                    <Link to={'/product/' + id}>Ver Detalle</Link>
+                   </Button>
+                   
+                 </CardContent>
                   <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
                       {titulo}

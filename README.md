@@ -1,5 +1,22 @@
 # Getting Started with Create React App
 
+Este Proyecto es un e-commerce de la tienda GAEMA- Productos Saludables.
+Fue desarrollado con React JS. 
+Por lo tanto lo primero que debe hacer es instalar React JX de la siguiente manera:
+    1) Instalar Node.js (bajar la última versión de https://nodejs.org/en/ y ejecutarlo ) 
+    2) Una vez instalado ir a la Terminal de VSC,  Ejjecutar npx create-react-app nombre-aplic (dentro de la carpeta del proyecto  - Se corre una sola vez)
+    3) cd nombre-proyecto (para ingresar en la carpeta del proyecto)
+    4) npm start (para iniciar) (si se sale de la aplicacion hay que correr desde acá nuevamente).
+    5) Luego limpiar los archivos para ir  sacando los que no son necesarios:
+	    En el Index.html cambiar el titulo por ecommerce x ej.
+	    Borrar: dentro de la carpeta src los archivos: setupTests.js, reportWebVitals.js, App.test.js, 
+	    En carpeta public: manifest.json , robots.txt , logo192.png y logo512.png
+	    Sacar en el Index.js el import del reportWebVitals 
+              y borrar en App.js el header className="App-header" (todo) 
+             Sacamos el import del Logo
+Una vez iniciado podremos ver nuestro proyecto que está replicado en https://github.com/plmacagno/EntregableCursoReact
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
