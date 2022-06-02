@@ -2,7 +2,7 @@
 
 Este Proyecto es un e-commerce de la tienda GAEMA- Productos Saludables.
 Fue desarrollado con React JS. 
-Por lo tanto lo primero que debe hacer es instalar React JX de la siguiente manera:
+Por lo tanto lo primero que debe hacer es instalar React JS de la siguiente manera:
     1) Instalar Node.js (bajar la última versión de https://nodejs.org/en/ y ejecutarlo ) 
     2) Una vez instalado ir a la Terminal de VSC,  Ejjecutar npx create-react-app nombre-aplic (dentro de la carpeta del proyecto  - Se corre una sola vez)
     3) cd nombre-proyecto (para ingresar en la carpeta del proyecto)

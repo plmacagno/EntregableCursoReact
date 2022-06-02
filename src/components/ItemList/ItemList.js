@@ -6,12 +6,13 @@ const ItemList = ( {products} ) => {
     return (
         <Grid container spacing={1} >
         {
-            products.map( ({imagen, titulo, precio, stock, descr, id}) => {
+            products.map( ({imagen, titulo, category, precio, stock, descr, id}) => {
                 return(
-                    <Grid item md={4} key={products.id}>
+                    <Grid item md={4} key={id}>
                      <Item 
                         imagen={imagen} 
                         titulo={titulo} 
+                        category={category}
                         precio={precio}
                         stock={stock} 
                         descr={descr}

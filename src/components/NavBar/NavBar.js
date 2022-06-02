@@ -57,7 +57,7 @@ const NavBar = () => {
                               >
 
                               {categorias.map( (cat) => {   
-                                 return <MenuItem onClick={handleClose}><Link to={`/products/${cat}`}>{cat}</Link></MenuItem>
+                                 return <MenuItem onClick={handleClose} key={cat}><Link to={`/products/${cat}`}>{cat}</Link></MenuItem>
                               })}
                               
                            </Menu>

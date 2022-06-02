@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
  
     useEffect( () => {
-
+            
             setProduct(productFilter)
             
              
