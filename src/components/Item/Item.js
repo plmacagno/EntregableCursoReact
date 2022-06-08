@@ -1,16 +1,19 @@
 import Button from '@mui/material/Button';
+import { useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {Link} from 'react-router-dom';
+import CartContext  from '../../context/CartContext'
+
 
 
   
-  const Item = ( { imagen, titulo, precio, stock, id } ) => {
-    
+  const Item = ({ imagen, titulo, precio, stock, id }  ) => {
+        const { addProductToCart, Quantity } = useContext(CartContext)
  
-         return ( 
+        return ( 
           <div>        
               <Card sx={{ maxWidth: 345 }}>
                 <CardContent>
@@ -20,12 +23,12 @@ import {Link} from 'react-router-dom';
                     image={`/${imagen}`}
                     alt="Imagen Producto"
                   />
-                   <Button variant={'transparent'} className="card-btn-details">
+                   <Button variant={'outlined'} className="card-btn-details">
                     <Link to={'/product/' + id}>Ver Detalle</Link>
                    </Button>
                    
                  </CardContent>
-                  <CardContent>
+                 <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
                       {titulo}
                     </Typography>
@@ -33,13 +36,14 @@ import {Link} from 'react-router-dom';
                       Precio $ {precio}
                     </Typography>
                     <Typography variant="body2" >
-                    Stock actual : {stock}
+                    Stock actual : {stock-Quantity}
                     </Typography>
-                  </CardContent>
-                         
-               </Card>
+                  
+                   <Button variant={'outlined'} onClick={() => addProductToCart({imagen, titulo, precio, stock, id })} >Agregar al Carrito</Button>        
+                 </CardContent>  
+              </Card>
             </div>
-         );
+         )
   }
 
 export default Item          

@@ -1,5 +1,5 @@
 import './ItemDetail.css'
-import { useState , } from 'react';
+import { useState} from 'react';
 import {Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -9,9 +9,11 @@ import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCount/ItemCount';
 
 
+
 const ItemDetail = ({data}) => {
      const [cantidad, setCantidad] = useState (1)
      const [showButton, setShowButton] = useState (false)
+    
      
      
     

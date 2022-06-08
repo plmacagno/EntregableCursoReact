@@ -6,7 +6,8 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Carro from '../CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
+// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const NavBar = () => {
       const [anchorEl, setAnchorEl] = useState(null);
@@ -78,7 +79,9 @@ const NavBar = () => {
                             </Button> 
                          </li>
                          <li>
-                          <Carro />
+                            
+                           <CartWidget />
+                        
                           </li>
                      </ul>
          

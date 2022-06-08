@@ -1,12 +1,12 @@
 import './ItemCount.css'
 import Button from '@mui/material/Button';
-import { useState , } from 'react';
+import { useState} from 'react';
 import { CardActions } from '@mui/material';
 import Modal from '../Modal/Modal'
 
 
 const ItemCount = ( {stock, cantidad, actualizarCantidad, setShowButton}  ) => {
-
+    
     const [open, setOpen] = useState(false)
     const handleClose = () => {
       setOpen(false)

@@ -1,36 +1,33 @@
 import { createContext, useState } from "react";
-let count=0;
+
 const CartContext = createContext ()
 
 const CartProvider = ({children}) => {
     
     const [cartListItems, setCartListItems] = useState([])
+    const [Quantity, setQuantity] = useState(0)
   
     const addProductToCart = (products) => {
         let isInCart = cartListItems.find(cartItem => cartItem.id === products.id)
-        
+        setQuantity(Quantity + 1)
         if(!isInCart) {
             console.log("Se agregó el producto al Carrito", products)
-            count=count+1 
+            
+           
             return setCartListItems(cartListItems => [...cartListItems, products])
         }
             console.log("El producto ya está en el carrito", products)
-           
-            if (isInCart === true) {
-                count=count+1
-        }   else {
-            count=0
-        }   
             
-    }   
        
 
-
-        console.log("Total productos agregados: ", count)
+    }   
+        
+        console.log("Total productos agregados: ", Quantity)
        
     const data = {
         cartListItems,
         addProductToCart,
+        Quantity
         
      
         
@@ -47,4 +44,5 @@ const CartProvider = ({children}) => {
 
 export default CartContext
 export { CartProvider }
-export  { count }
+
+

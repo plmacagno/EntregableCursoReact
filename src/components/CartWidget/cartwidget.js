@@ -1,12 +1,75 @@
+import './CartWidget.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Menu } from '@mui/material';
+import { useContext, useState } from 'react';
+import CartContext from '../../context/CartContext';
+import CardMedia from '@mui/material/CardMedia';
 
-const Carro = () => {
+
+
+const CartWidget = () => {
+    
+    const { cartListItems, Quantity } = useContext(CartContext)
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
     return (
-        <button color="inherit">
-             <ShoppingCartIcon />
-         </button>
-
+    
+     <div >
+         <ShoppingCartIcon
+            className='boton'
+            color={'pallete.info.dark'}
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+            />
+        <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+                'aria-labelledby' : 'basic-button',
+            }}
+            >
+            <div className='container-item-list-cart'>
+              {cartListItems.length === 0 && (<p>El Carrito  está vacío</p>) }
+              {cartListItems.map( (item) => {
+                    return(
+                    <div className='item-cart-prod' key={item.id}>
+                             <div className='cart-prod__info'>
+                                <p>{item.titulo} </p>
+                                <span>Precio $ {item.precio}</span><br></br>
+                                <span>Stock actual: {item.stock-Quantity}</span><br></br>
+                                <span>Se agregaron {Quantity} Productos</span>
+                            </div >   
+                         <div>
+                             <CardMedia
+                                component="img"
+                                height="150"
+                                image={`/${item.imagen}`}
+                                alt="Imagen Producto"
+                            />
+                    
+                            
+                         </div>
+                               
+ 
+                    </div>
+                    )
+                })}     
+            </div>            
+        </Menu>    
+    </div>       
+          
         )
     }
     
-    export default Carro
+    export default CartWidget
