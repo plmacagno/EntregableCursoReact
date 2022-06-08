@@ -35,21 +35,34 @@
 }
 
 .mas-info {
-      
+    display: table-row;  
+    align-content: center;
     text-align: center;
     color: green;
+    
    
+}
+
+.mas-info h2{
+    margin: 20px 420px; 
 }
 
 .mas-info img {
 
     width: 50%;
     justify-content: center;
-     margin: 0px 450px; 
+    margin: 0px 450px; 
     align-items: center;
 }
 
+.mas-info label{
+    text-align: center;
+    color: #054723;
+    
+}
+
 .info-baja {
+    
     justify-content: center;
     margin-left:  450px;
     align-items: center;

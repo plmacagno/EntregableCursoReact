@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import productos from '../Data/ProductsMock';
 
 
-const ItemListContainer = ({titu}) => {
+const ItemListContainer = ({title}) => {
    
        
         const [products, setProducts] = useState([])
@@ -34,7 +34,7 @@ const ItemListContainer = ({titu}) => {
 
     return (
         <>
-        <h1> {titu} </h1>
+        <h1> {title} </h1>
             <Grid container spacing={1} >
                 {
                     products.map( ({imagen, titulo, category, precio, stock, descr, id}) => {

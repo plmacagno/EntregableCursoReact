@@ -3,18 +3,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import ItemCount from '../ItemCount/ItemCount';
 import {Link} from 'react-router-dom';
 
 
   
   const Item = ( { imagen, titulo, precio, stock, id } ) => {
     
-      const onAdd = (cantidad) => {
-        alert ('Compraste' + ' ' + cantidad + ' ' + 'Productos')
-      
-       } 
-
+ 
          return ( 
           <div>        
               <Card sx={{ maxWidth: 345 }}>
@@ -41,7 +36,6 @@ import {Link} from 'react-router-dom';
                     Stock actual : {stock}
                     </Typography>
                   </CardContent>
-                  <ItemCount stock={ stock } onAdd={ onAdd } />
                          
                </Card>
             </div>

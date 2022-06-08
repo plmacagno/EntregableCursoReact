@@ -5,36 +5,34 @@ import { CardActions } from '@mui/material';
 import Modal from '../Modal/Modal'
 
 
-const ItemCount = ( {stock, onAdd}  ) => {
+const ItemCount = ( {stock, cantidad, actualizarCantidad, setShowButton}  ) => {
 
     const [open, setOpen] = useState(false)
     const handleClose = () => {
       setOpen(false)
     }
-
-     const [count, setCount] =useState(1);
-    const addCount = () => {
-        setCount(count + 1)
+     
+    const addProduct = () => {
+       actualizarCantidad(cantidad + 1)
     } 
 
-    const resCount = () => {
-        setCount(count - 1)
+    const resProduct = () => {
+        actualizarCantidad(cantidad - 1)
     }
 
-       return (
+        return (
                
-       <div>
-            <CardActions className='item-Count'>
-            
-                <Button size="small" onClick={resCount} disabled={count === 0}>-</Button>
-                <p>{count}</p>
-                <Button size="small" onClick={addCount} disabled={count >= stock}>+</Button>
+       <div className='item-Count'>
+            <CardActions >
+                 <h5>SELECCIONE LA CANTIDAD</h5>
+              <Button size="small" onClick={resProduct} disabled={cantidad === 0}>-</Button> 
+                <p>{cantidad}</p>
+                <Button size="small" onClick={addProduct} disabled={cantidad >= stock}>+</Button>
                             
             </CardActions>
             <CardActions className='item-Count' >
-
-                <Button size="small" onClick={() =>  onAdd ( count ) }>Compra</Button>
-                <Button size="small" onClick={() => setOpen (true)}>Contacto</Button>
+                <Button variant='outlined' size="small" onClick={() => setOpen (true)}>Contacto</Button>
+                <Button variant='outlined' onClick={() => setShowButton(true)}>AGREGAR PRODUCTO</Button>
             </CardActions>
 
             <Modal handleClose={handleClose} open={open}>

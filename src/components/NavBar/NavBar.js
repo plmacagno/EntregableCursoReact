@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Carro from '../CartWidget/cartwidget';
+import Carro from '../CartWidget/CartWidget';
 
 const NavBar = () => {
       const [anchorEl, setAnchorEl] = useState(null);
@@ -42,7 +42,8 @@ const NavBar = () => {
                               aria-haspopup="true"
                               aria-expanded={open ? 'true' : undefined}
                               onClick={handleClick}
-                              style={{backgroundColor: "lightblue" }}
+                              style={{backgroundColor: "lightblue"} }
+                             
                               >
                               Productos
                               </Button>

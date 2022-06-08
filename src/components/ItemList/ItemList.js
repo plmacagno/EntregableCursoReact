@@ -2,8 +2,11 @@
 import { Grid } from '@mui/material';
 import Item from '../Item/Item';
 
-const ItemList = ( {products} ) => {
+const ItemList = ( {products, title} ) => {
     return (
+        <>
+        <h1> {title} </h1>
+        
         <Grid container spacing={1} >
         {
             products.map( ({imagen, titulo, category, precio, stock, descr, id}) => {
@@ -24,7 +27,7 @@ const ItemList = ( {products} ) => {
             })
         }
         </Grid>
-       
+     </>  
  
     )
 }
