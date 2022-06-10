@@ -6,10 +6,9 @@ import CartContext from '../../context/CartContext';
 import CardMedia from '@mui/material/CardMedia';
 
 
-
 const CartWidget = () => {
     
-    const { cartListItems, Quantity } = useContext(CartContext)
+    const { cart, qty} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -40,15 +39,15 @@ const CartWidget = () => {
             }}
             >
             <div className='container-item-list-cart'>
-              {cartListItems.length === 0 && (<p>El Carrito  está vacío</p>) }
-              {cartListItems.map( (item) => {
+              {cart.length === 0 && (<p>El Carrito  está vacío</p>) }
+              {cart.map( (item) => {
                     return(
                     <div className='item-cart-prod' key={item.id}>
                              <div className='cart-prod__info'>
                                 <p>{item.titulo} </p>
                                 <span>Precio $ {item.precio}</span><br></br>
-                                <span>Stock actual: {item.stock-Quantity}</span><br></br>
-                                <span>Se agregaron {Quantity} Productos</span>
+                                <span>Stock actual: {item.stock-qty}</span><br></br>
+                                <span>Se agregaron {qty} Productos</span>
                             </div >   
                          <div>
                              <CardMedia

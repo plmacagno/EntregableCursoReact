@@ -1,5 +1,4 @@
 import './ItemDetail.css'
-import { useState} from 'react';
 import {Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -7,12 +6,18 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCount/ItemCount';
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
 
 
 
 const ItemDetail = ({data}) => {
-     const [cantidad, setCantidad] = useState (1)
-     const [showButton, setShowButton] = useState (false)
+
+    const { addToCart, isInCart, deleteItem } = useContext(CartContext)
+    
+    const sendItemToCart = (qty) => {
+      addToCart({...data, cantidad: qty})
+    }
     
      
      
@@ -41,14 +46,14 @@ const ItemDetail = ({data}) => {
                     {data.descr}
                   </Typography>
                 
-                {!showButton ?
-                 <ItemCount
-                 cantidad={cantidad}
-                 setShowButton={setShowButton}
-                 actualizarCantidad={setCantidad} 
-                          
-                />
-                :
+                
+                {isInCart(data.id) ? (<Button variant='outlined' onClick={() => {deleteItem(data.id)}}>Borrar Producto</Button>) : 
+                (<ItemCount
+                 stock={data.stock}
+                 price={data.precio}
+                 onAdd={sendItemToCart}
+                />)}
+
                 <Button variant='outlined'><Link to='/cart'>Ir al Carrito</Link></Button>}
               </CardContent> 
               

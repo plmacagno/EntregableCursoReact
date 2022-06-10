@@ -1,16 +1,15 @@
 import Button from '@mui/material/Button';
-import { useContext } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {Link} from 'react-router-dom';
-import CartContext  from '../../context/CartContext'
+
 
 
   
   const Item = ({ imagen, titulo, precio, stock, id }  ) => {
-        const { addProductToCart, Quantity } = useContext(CartContext)
+       
  
         return ( 
           <div>        
@@ -35,10 +34,10 @@ import CartContext  from '../../context/CartContext'
                       Precio $ {precio}
                     </Typography>
                     <Typography variant="body2" >
-                    Stock actual : {stock-Quantity}
+                    Stock actual : {stock}
                     </Typography>
                   
-                   <Button variant={'outlined'} onClick={() => addProductToCart({imagen, titulo, precio, stock, id })} >Agregar al Carrito</Button>        
+  
                  </CardContent>  
               </Card>
             </div>
