@@ -1,0 +1,135 @@
+.col-cart-table_head {
+    display: flex;
+    border-bottom: 1px solid green;
+    color: darkgreen;
+    
+}
+
+
+.col-cart-table_head h2 {
+     font-size: 18px;
+     width: 35%;
+}
+
+.cart-table__content {
+   display: flex;
+    
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cart-table__content > div {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+    justify-content: center;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.cart-table__content-img  {
+   width: 10% !important;
+}
+
+.cart-table__content-img img{
+    width: 100%;
+}
+
+.cart-table_content-title {
+    width: 30%;
+        
+}
+
+.cart-table__content-price {
+    width: 20%;
+} 
+ .cart-table__content-quantity {
+
+    width: 20%;
+}
+
+.cart-table__content-btn {
+    width: 20%;
+}
+
+.cart-table__content > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 25px;
+}
+
+.cart-table__content-title {
+    flex-direction: column;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.cart-checkout-details button {
+    background: darkgreen;
+    border-radius: 40px;
+    text-transform: none;
+    color: white;
+    font-family: 'Lato';
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    -webkit-user-select: none;
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: darkblue;
+    margin-left: 0px;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+}
+
+.titulo {
+    text-align: center;
+    color: darkgreen;
+   
+}
+
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: red;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: none;
+    border-color: buttonborder;
+    border-image: initial;
+}
+

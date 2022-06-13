@@ -1,4 +1,5 @@
 
+
 import { createContext, useEffect, useState } from "react";
 
 const CartContext = createContext ()
@@ -6,6 +7,7 @@ const CartContext = createContext ()
 const CartProvider = ({children}) => {
     
     const [cart, setCart] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
    
     useEffect (() => {
         console.log(cart)
@@ -13,6 +15,7 @@ const CartProvider = ({children}) => {
 
     const addToCart = (item) => {
         setCart([...cart, item])
+        setTotalPrice(totalPrice + item.precio)
     }
 
     const isInCart = (id) => {
@@ -31,7 +34,8 @@ const CartProvider = ({children}) => {
         addToCart,
         isInCart,
         deleteItem,
-        clearCart
+        clearCart,
+        totalPrice
 
     }
    

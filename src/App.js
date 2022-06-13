@@ -7,6 +7,7 @@ import Nosotros from '../src/Pages/Nosotros'
 import Contacto from '../src/Pages/Contacto'
 import Detalle from './Pages/Detalle';
 import { CartProvider} from './context/CartContext';
+import Cart from './Pages/Cart';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <NavBar />
           <Routes>
             <Route exact path='/' element={<Inicio />} />
+            <Route exact path='/Cart' element={<Cart />} />
             <Route exact path='/Nosotros' element={<Nosotros />} />
             <Route exact path='/Contacto' element={<Contacto />} /> 
             <Route exact path='/product/:id' element={<Detalle />} /> 

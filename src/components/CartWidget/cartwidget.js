@@ -8,7 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 
 const CartWidget = () => {
     
-    const { cart, qty} = useContext(CartContext)
+    const { cart, cantidad} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -46,8 +46,8 @@ const CartWidget = () => {
                              <div className='cart-prod__info'>
                                 <p>{item.titulo} </p>
                                 <span>Precio $ {item.precio}</span><br></br>
-                                <span>Stock actual: {item.stock-qty}</span><br></br>
-                                <span>Se agregaron {qty} Productos</span>
+                                <span>Stock actual: {item.stock-cantidad}</span><br></br>
+                                <span>Se agregaron {cantidad} Productos</span>
                             </div >   
                          <div>
                              <CardMedia

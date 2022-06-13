@@ -19,7 +19,7 @@ const ItemDetail = ({data}) => {
       addToCart({...data, cantidad: qty})
     }
     
-     
+     console.log("La cantidad agregada es: ", data.qty)
      
     
      return (
@@ -52,9 +52,10 @@ const ItemDetail = ({data}) => {
                  stock={data.stock}
                  price={data.precio}
                  onAdd={sendItemToCart}
+                 cantidad={data.qty}
                 />)}
 
-                <Button variant='outlined'><Link to='/cart'>Ir al Carrito</Link></Button>}
+                <Button variant='outlined'><Link to='/cart'>Ir al Carrito</Link></Button>
               </CardContent> 
               
            </Card>     

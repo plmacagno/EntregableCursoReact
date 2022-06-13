@@ -5,7 +5,7 @@ import { CardActions } from '@mui/material';
 import Modal from '../Modal/Modal'
 
 
-const ItemCount = ( {stock, onAdd}  ) => {
+const ItemCount = ( {stock, onAdd }  ) => {
     
     const [open, setOpen] = useState(false)
     const handleClose = () => {
@@ -15,6 +15,7 @@ const ItemCount = ( {stock, onAdd}  ) => {
    const [count, setCount] = useState(1);
    const addCount = () =>{
     setCount(count + 1)
+    
    }
 
 const resCount = () =>{
