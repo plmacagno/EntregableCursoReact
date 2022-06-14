@@ -2,60 +2,40 @@ import Item from '../Item/Item'
 import { Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 // import productos from '../Data/ProductsMock';
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import db from '../Data/firebaseConfig';
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = ({title}) => {
    
        
     const [products, setProducts] = useState([])
+    const {category} = useParams();
     
-  /*}         const getItem = () => {
-            return new Promise ( (resolve, reject) => {
-                setTimeout(() => {
-                    resolve (productos)
-            }, 2000)
-            })
-    }
-
-        
-        useEffect( () => {
-          getProducts()
-          getItem()
-          .then( (res) => {
-              setProducts(res)
-       
-        })
-        .catch ( (err) => {
-       
-        })
-        .finally ( () => {
-       
-        })
-        },[])   
-    */ 
-
-     useEffect( () => {
-        setProducts([])
-        getProducts()
-       
-        .then( (productos) => {
-            setProducts(productos)
-     
-      })
-    },[])
-    
+ 
         const getProducts = async  () => {
-            const productSnapshot = await getDocs(collection(db, "productos"));
+            const refDin = category
+            ? query(collection(db, "productos"), where("category", "==", category))
+            : collection(db, "productos");
+        
+            const productSnapshot = await getDocs(refDin);
             const productList = productSnapshot.docs.map((doc) => {
                 let product =doc.data()
                 product.id = doc.id
-                return product
-            })
+                return product   
+            });
             return productList
-        }
-    
+        };
+        useEffect( () => {
+            setProducts([])
+            getProducts()           
+            .then( (productos) => {
+                setProducts(productos);
+         
+          });
+        },[category]);
+
     return (
         <>
         <h1> {title} </h1>

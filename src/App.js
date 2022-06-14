@@ -8,6 +8,7 @@ import Contacto from '../src/Pages/Contacto'
 import Detalle from './Pages/Detalle';
 import { CartProvider} from './context/CartContext';
 import Cart from './Pages/Cart';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
             <Route exact path='/Nosotros' element={<Nosotros />} />
             <Route exact path='/Contacto' element={<Contacto />} /> 
             <Route exact path='/product/:id' element={<Detalle />} /> 
-            <Route exact path='/products/:category' element={<ListProducts />} /> 
+            <Route exact path='/products/:category' element={<ItemListContainer />} /> 
             <Route exact path='*' element={<h1> Error 404 - Pagina no encontrada</h1>} /> 
           </Routes>
         </BrowserRouter>

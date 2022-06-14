@@ -23,7 +23,7 @@ const CartProvider = ({children}) => {
     }
 
     const deleteItem = (id) => {
-        const auxCart = cart.filler(prod => prod.id !== id);
+        const auxCart = cart.filter(prod => prod.id !== id);
         setCart(auxCart)
     }
 

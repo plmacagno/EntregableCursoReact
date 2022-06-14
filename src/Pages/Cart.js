@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 
 
 const Cart = () => {
-   const { cart, totalPrice} = useContext(CartContext)
+   const { cart, totalPrice, deleteItem} = useContext(CartContext)
         console.log("Cart desde Checkout: ", cart)
    
     return (
@@ -40,9 +40,11 @@ const Cart = () => {
                         <p>1</p>
                     </div>
                     <div className="cart-table__content-btn">
-                        <button className="btn-delete">
+                        <button className="btn-delete" onClick={() =>{deleteItem(id)}}>
+                           
                             <Delete />
                         </button>
+                        
                     </div>
                 </div>
 

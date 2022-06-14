@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import ItemDetail from "../ItemDetail/ItemDetail";
-// import productos from "../Data/ProductsMock";
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import db from '../Data/firebaseConfig';
@@ -13,7 +12,6 @@ const ItemDetailContainer = () => {
  
     useEffect( () => {
             
-            //setProduct(productFilter)
         getProduct()
         .then( (prod) => {
             setProduct(prod)
@@ -30,11 +28,7 @@ const ItemDetailContainer = () => {
         return product
     }
                 
-    //const productFilter = productos.find( (product) => {
-    //    return product.id == id
-    // })
-
-    return(
+     return(
         <>
  
          <ItemDetail data={product}/>
