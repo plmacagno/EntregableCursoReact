@@ -19,7 +19,7 @@ const ItemDetail = ({data}) => {
       addToCart({...data, cantidad: qty})
     }
     
-     console.log("La cantidad agregada es: ", data.qty)
+    
      
     
      return (

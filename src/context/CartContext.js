@@ -9,13 +9,20 @@ const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
    
+    const getTotalPrice = () => {
+        let total = 0
+        cart.forEach(prod =>
+            total += prod.cantidad * prod.precio)
+            setTotalPrice(total)
+    }
     useEffect (() => {
+        getTotalPrice()
         console.log(cart)
     }, [cart])  
 
     const addToCart = (item) => {
         setCart([...cart, item])
-        setTotalPrice(totalPrice + item.precio)
+        
     }
 
     const isInCart = (id) => {

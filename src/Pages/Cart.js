@@ -23,7 +23,7 @@ const Cart = () => {
                 <h2>Quitar</h2>
             </div>
             {cart.map( (item)  => {
-                const {titulo, imagen, precio, id} = item
+                const {titulo, imagen, precio, id, cantidad} = item
                  return(
                 
                 <div className="cart-table__content" key={id}>
@@ -37,7 +37,7 @@ const Cart = () => {
                         <p>$ {precio}</p>
                     </div>
                     <div className="cart-table__content-quantity">
-                        <p>1</p>
+                        <p>{cantidad}</p>
                     </div>
                     <div className="cart-table__content-btn">
                         <button className="btn-delete" onClick={() =>{deleteItem(id)}}>
