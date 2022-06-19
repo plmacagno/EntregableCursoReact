@@ -1,7 +1,6 @@
 import Item from '../Item/Item'
 import { Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
-// import productos from '../Data/ProductsMock';
 import { collection, getDocs, query, where } from "firebase/firestore";
 import db from '../Data/firebaseConfig';
 import { useParams } from 'react-router-dom';

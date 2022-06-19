@@ -33,11 +33,7 @@ import {Link} from 'react-router-dom';
                     <Typography variant="body2" >
                       Precio $ {precio}
                     </Typography>
-                    <Typography variant="body2" >
-                    Stock actual : {stock}
-                    </Typography>
-                  
-  
+   
                  </CardContent>  
               </Card>
             </div>

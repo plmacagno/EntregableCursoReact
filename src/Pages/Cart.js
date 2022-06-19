@@ -1,18 +1,77 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import '../../src/Pages/Cart.css'
 import { Container, Button } from "@mui/material"
 import { Delete } from "@mui/icons-material"  
 import CartContext from '../context/CartContext'
 import {Link} from 'react-router-dom';
+import Modal from '../components/Modal/Modal'
+import TextField from '@mui/material/TextField';
+import { addDoc, collection } from 'firebase/firestore';
+import db from '../components/Data/firebaseConfig';
+import { useNavigate } from 'react-router-dom';
 
+
+let date = new Date().toDateString();
+console.log(date);
 
 const Cart = () => {
-   const { cart, totalPrice, deleteItem} = useContext(CartContext)
-        console.log("Cart desde Checkout: ", cart)
+    const { cart, totalPrice, deleteItem, clearCart} = useContext(CartContext)
+    const [showModal, setShowModal] = useState(false);   
+    
+    const [formValue, setFormValue] = useState ({
+        name:' ',
+        phone:' ',
+        email:' '
+
+    })
+
+    const [order, setOrder] = useState({
+        buyer: {},
+        items: cart.map( (items) => {
+            return {
+                id: items.id,
+                title: items.titulo,
+                price: items.precio,
+                cantidad: items.cantidad
+            }
+        } ),
+        total: totalPrice,
+        fecha: date
+    })
+
+
+        
+    const [sucess, setSuccess] = useState()
+    const navigate = useNavigate()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setOrder({...order, buyer: formValue})
+        saveData({...order, buyer: formValue})
+    }
    
+    const handleChange = (e) => {
+        setFormValue({...formValue, [e.target.name]: e.target.value})
+    }
+
+    const endOrder = () => {
+        
+        navigate('/')
+    }
+
+    const saveData = async (newOrder) => {
+        const orderFirebase = collection(db, 'ordenes')
+        const orderDoc = await addDoc(orderFirebase, newOrder)
+        setSuccess(orderDoc.id)
+        clearCart()
+      
+    }
+
+    
     return (
         
         <Container className='container-general'>
+       
         <h2 className='titulo'>CHECKOUT</h2>
         <div className="cart-section">
             <div className="col-cart-table_head">
@@ -40,10 +99,10 @@ const Cart = () => {
                         <p>{cantidad}</p>
                     </div>
                     <div className="cart-table__content-btn">
-                        <button className="btn-delete" onClick={() =>{deleteItem(id)}}>
+                        <Button className="btn-delete" onClick={() =>{deleteItem(id)}}>
                            
                             <Delete />
-                        </button>
+                        </Button>
                         
                     </div>
                 </div>
@@ -63,10 +122,51 @@ const Cart = () => {
                         <p>Total</p>
                         <span>$ {totalPrice}</span>
                     </div>
-                    <Button className="btn-custom">Completar Compra</Button>
+                    <Button className="btn-custom" onClick={() => setShowModal(true)}>Completar Compra</Button>
                 </div>
             </div>
         </div>
+        
+        <Modal  title={sucess ? "COMPRA CONFIRMADA!" : "POR FAVOR CONFIRME SU COMPRA"} open={showModal} handleClose={() => setShowModal(false)}>
+            {sucess ? (
+                <div>
+                    Su compra fue Confirmada!<br></br>
+                    Número de Orden: {sucess}<br></br>
+                    <Button variant='outlined' onClick={endOrder}>Aceptar</Button>
+                </div>
+            ) : (
+
+                     
+            <form className='form_contact' onSubmit={handleSubmit}>
+                <TextField 
+                    id="outlined-basic" 
+                    name="name"
+                    label="Nombre y Apellido"
+                    variant="outlined"
+                    value={formValue.name}
+                    onChange={handleChange}
+                />
+                <TextField 
+                    id="outlined-basic"
+                    name="phone"
+                    label="Teléfono"
+                    variant="outlined" 
+                    value={formValue.phone}
+                    onChange={handleChange}
+                />
+                <TextField 
+                    id="outlined-basic" 
+                    name="email"
+                    label="Mail" 
+                    variant="outlined" 
+                    value={formValue.mail}
+                    onChange={handleChange}
+                />
+                <Button type="submit">Enviar</Button> 
+            </form>
+         )}    
+        </Modal>
+        
         </Container>
     )
 }

@@ -17,7 +17,7 @@ const CartProvider = ({children}) => {
     }
     useEffect (() => {
         getTotalPrice()
-        console.log(cart)
+       
     }, [cart])  
 
     const addToCart = (item) => {

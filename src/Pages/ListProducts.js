@@ -3,9 +3,6 @@ import productos from '../components/Data/ProductsMock';
 import { useParams } from "react-router-dom";
 import ItemList from "../components/ItemList/ItemList";
 
-import { collection, getDocs } from "firebase/firestore";
-import db from "../components/Data/firebaseConfig";
-
 const ListProducts = () => {
      
    const [products, setProducts] = useState([])

@@ -2,7 +2,6 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Inicio from  '../src/Pages/Inicio'
-import ListProducts from './Pages/ListProducts'
 import Nosotros from '../src/Pages/Nosotros'
 import Contacto from '../src/Pages/Contacto'
 import Detalle from './Pages/Detalle';
