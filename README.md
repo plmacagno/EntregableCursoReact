@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-ECOMMERCE-GAEMA
+ECOMMERCE-GAEMA.
 Este Proyecto es un e-commerce de la tienda GAEMA- Productos Saludables.
 Fue desarrollado con React JS. 
 En dicha página hay información de los productos y en el detalle de los mismos podrá
