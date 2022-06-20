@@ -9,11 +9,13 @@ import {Link} from 'react-router-dom';
 
   
   const Item = ({ imagen, titulo, precio, stock, id }  ) => {
-       
+        
  
         return ( 
-          <div>        
-              <Card sx={{ maxWidth: 345 }}>
+         
+          
+        <div>   
+             <Card sx={{ maxWidth: 345 }}>
                 <CardContent>
                   <CardMedia
                     component="img"
@@ -37,6 +39,7 @@ import {Link} from 'react-router-dom';
                  </CardContent>  
               </Card>
             </div>
+           
          )
   }
 

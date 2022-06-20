@@ -1,7 +1,11 @@
 # Getting Started with Create React App
 
+ECOMMERCE-GAEMA
 Este Proyecto es un e-commerce de la tienda GAEMA- Productos Saludables.
 Fue desarrollado con React JS. 
+En dicha página hay información de los productos y en el detalle de los mismos podrá
+comprar la cantidad necesaria y luego confirmar la compra en el Checkout delcarrito.
+La base de datos donde se encuentran los datos leídos y donde se guardan las consultas y los datos necesarios de los productos comprados para cerrar a operación es Firebase/Firestore.  
 Por lo tanto lo primero que debe hacer es instalar React JS de la siguiente manera:
     1) Instalar Node.js (bajar la última versión de https://nodejs.org/en/ y ejecutarlo ) 
     2) Una vez instalado ir a la Terminal de VSC,  Ejjecutar npx create-react-app nombre-aplic (dentro de la carpeta del proyecto  - Se corre una sola vez)

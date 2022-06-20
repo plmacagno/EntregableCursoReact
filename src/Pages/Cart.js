@@ -79,7 +79,7 @@ const Cart = () => {
                 <h2>Descripción</h2>
                 <h2>Precio Unitario</h2>
                 <h2>Cantidad</h2>
-                <h2>Quitar</h2>
+                <h2>Borrar Producto</h2>
             </div>
             {cart.map( (item)  => {
                 const {titulo, imagen, precio, id, cantidad} = item
@@ -113,7 +113,7 @@ const Cart = () => {
             <div className="cart-footer">
                 <Button className="btn-custom" ><Link to='/products/box'>Continuar comprando</Link></Button>
                 
-                <div className="cart-checkout-details">
+                <div className="cart-checkout-details" >
                     <div className="cart-checkout__subtotal">
                         <p>Subtotal</p>
                         <span>$ {totalPrice}</span>
@@ -159,7 +159,7 @@ const Cart = () => {
                     name="email"
                     label="Mail" 
                     variant="outlined" 
-                    value={formValue.mail}
+                    value={formValue.email}
                     onChange={handleChange}
                 />
                 <Button type="submit">Enviar</Button> 

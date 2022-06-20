@@ -1,0 +1,46 @@
+.section1 img {
+    display: flex;
+    animation-name: agrandado;
+    animation-iteration-count: infinite;
+    animation-duration: 10s; }
+  
+  @keyframes agrandado {
+    0% {
+      height: 150px; }
+    25% {
+      height: 200px; }
+    50% {
+      height: 250px; }
+    75% {
+      height: 200px; }
+    100% {
+      height: 150px; } }
+  
+  .section1 div img {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 140px; }
+  
+  .section1 p {
+    max-width: 100%;
+    min-width: 250px;
+    text-align: left;
+    color: green;
+    font-size: 20px; }
+  
+  .nosotros {
+    margin: 20px;
+    display: flex; }
+  
+  .nosotros p {
+    max-width: 500px;
+    min-width: 200px; }
+  
+  .h2 {
+    color: green;
+    padding: 2 rem;
+    padding-top: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 35px; }

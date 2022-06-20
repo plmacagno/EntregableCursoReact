@@ -1,0 +1,35 @@
+.form_contacto div {
+    margin-bottom: 15px;
+ }
+
+ .form_contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_contacto Button {
+    background: darkgreen;
+    text-transform: none;
+    color: white;
+    font-family: "Lato";
+    padding: 10px 20 px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    margin-left: 50px;
+    color: darkgreen;
+}
+
+.css-ypiqx9-MuiDialogContent-root {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    padding: 20px 24px;
+    color: darkgreen;
+}

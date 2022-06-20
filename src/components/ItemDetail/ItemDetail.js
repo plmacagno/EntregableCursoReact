@@ -1,5 +1,6 @@
 import './ItemDetail.css'
 import {Link} from 'react-router-dom';
+import { useState} from 'react';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -14,7 +15,8 @@ import CartContext from '../../context/CartContext';
 const ItemDetail = ({data}) => {
 
     const { addToCart, isInCart, deleteItem } = useContext(CartContext)
-    
+    const [showButton, setShowButton] = useState (false)
+
     const sendItemToCart = (qty) => {
       addToCart({...data, cantidad: qty})
     }
@@ -48,14 +50,18 @@ const ItemDetail = ({data}) => {
                 
                 
                 {isInCart(data.id) ? (<Button variant='outlined' onClick={() => {deleteItem(data.id)}}>Borrar Producto</Button>) : 
-                (<ItemCount
-                 stock={data.stock}
-                 price={data.precio}
-                 onAdd={sendItemToCart}
-                 cantidad={data.qty}
-                />)}
+                  (<ItemCount
+                  stock={data.stock}
+                  price={data.precio}
+                  onAdd={sendItemToCart}
+                  cantidad={data.qty}
+                  />
+                  )}
 
+                
                 <Button variant='outlined'><Link to='/cart'>Ir al Carrito</Link></Button>
+                
+              
               </CardContent> 
               
            </Card>     

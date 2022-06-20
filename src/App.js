@@ -5,6 +5,7 @@ import Inicio from  '../src/Pages/Inicio'
 import Nosotros from '../src/Pages/Nosotros'
 import Contacto from '../src/Pages/Contacto'
 import Detalle from './Pages/Detalle';
+import Footer from './Footer/Footer';
 import { CartProvider} from './context/CartContext';
 import Cart from './Pages/Cart';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -27,6 +28,7 @@ function App() {
             <Route exact path='/products/:category' element={<ItemListContainer />} /> 
             <Route exact path='*' element={<h1> Error 404 - Pagina no encontrada</h1>} /> 
           </Routes>
+          <Footer />
         </BrowserRouter>
       </CartProvider> 
     </div>  

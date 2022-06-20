@@ -14,7 +14,6 @@
    color: darkgreen;
    background: white;
    text-align: center;
- 
    font-size: 25px;
 }
 
@@ -31,7 +30,8 @@
    font-size: 15px;
 }
 .item-cart-prod p {
-   font-size: 15px;
+   text-align: center;
+   font-size: 17px;
 }
 
 .cart-prod__info {
