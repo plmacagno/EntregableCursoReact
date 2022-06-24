@@ -1,5 +1,6 @@
 # Getting Started with Create React App
 
+<<<<<<< HEAD
 ## ECOMMERCE-GAEMA
    ----------------
 
@@ -19,6 +20,7 @@
 	   		 Sacar en el Index.js el import del reportWebVitals 
              	 y borrar en App.js el header className="App-header" 				(todo) 
             	 Sacamos el import del Logo
+
 Una vez iniciado podremos ver nuestro proyecto que está replicado en https://github.com/plmacagno/EntregableCursoReact
 
 
