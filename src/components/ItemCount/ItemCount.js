@@ -2,16 +2,12 @@ import './ItemCount.css'
 import Button from '@mui/material/Button';
 import { useState} from 'react';
 import { CardActions } from '@mui/material';
-import Modal from '../Modal/Modal'
+
 
 
 const ItemCount = ( {stock, onAdd }  ) => {
     
-    const [open, setOpen] = useState(false)
-    const handleClose = () => {
-      setOpen(false)
-    }
-     
+  
    const [count, setCount] = useState(1);
    const addCount = () =>{
     setCount(count + 1)
@@ -33,21 +29,10 @@ const resCount = () =>{
                             
             </CardActions>
             <CardActions className='item-Count' >
-                <Button variant='outlined' size="small" onClick={() => setOpen (true)}>Contacto</Button>
                 <Button variant='outlined' onClick={() => {onAdd(count)}}>AGREGAR PRODUCTO</Button>
             </CardActions>
 
-            <Modal handleClose={handleClose} open={open}>
-                    <h2>Ingrese los datos solicitados</h2>
-                    <form>
-                        <input type={'text'} placeholder={'Nombre y Apellido'}/>
-                        <input type={'email'} placeholder={'Mail'}/>
-                        <button>Enviar</button>
-                    </form> 
-            </Modal>
-              
-
-                
+               
         </div>
        
     );

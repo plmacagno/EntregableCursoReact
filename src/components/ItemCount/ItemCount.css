@@ -1,8 +1,8 @@
 .item-Count {
-    /*background-color: #ddeddd;*/
-    display: table-row;
+       display: table-row;
     width: 100%;
     justify-content: center;
+    text-align: center;
     
    
 }
