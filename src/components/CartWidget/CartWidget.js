@@ -6,9 +6,10 @@ import CartContext from '../../context/CartContext';
 import CardMedia from '@mui/material/CardMedia';
 
 
+
 const CartWidget = () => {
     
-    const { cart, cantidad} = useContext(CartContext)
+    const { cart, } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -56,14 +57,15 @@ const CartWidget = () => {
                                 image={`/${item.imagen}`}
                                 alt="Imagen Producto"
                             />
-                    
+                        
                             
                          </div>
-                               
- 
+                        
                     </div>
                     )
-                })}     
+                })}  
+                
+                   
             </div>            
         </Menu>    
     </div>       
