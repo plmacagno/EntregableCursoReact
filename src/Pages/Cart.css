@@ -2,20 +2,19 @@
     display: flex;
     border-bottom: 1px solid green;
     color: darkgreen;
-    
+    justify-content: center;
 }
-
 
 .col-cart-table_head h2 {
      font-size: 18px;
      width: 35%;
+     text-align: left;
 }
 
 .cart-table__content {
    display: flex;
-    
-    flex-direction: row;
-    justify-content: space-between;
+   flex-direction: row;
+   justify-content: space-between;
 }
 
 .cart-table__content > div {
@@ -36,15 +35,14 @@
 }
 
 .cart-table_content-title {
-    width: 30%;
-        
+    width: 35%;
 }
 
 .cart-table__content-price {
     width: 20%;
 } 
- .cart-table__content-quantity {
 
+ .cart-table__content-quantity {
     width: 20%;
 }
 
@@ -73,7 +71,6 @@
     justify-content: space-between;
 }
 
-
 .cart-checkout-details button {
     background: darkgreen;
     text-transform: none;
@@ -84,13 +81,10 @@
     font-size: 14px;
 }
 
-
 .titulo {
     text-align: center;
     color: darkgreen;
-   
 }
-
 
 .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
     display: -webkit-inline-box;

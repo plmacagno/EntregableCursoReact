@@ -5,8 +5,6 @@ import { useContext, useState } from 'react';
 import CartContext from '../../context/CartContext';
 import CardMedia from '@mui/material/CardMedia';
 
-
-
 const CartWidget = () => {
     
     const { cart, } = useContext(CartContext)
@@ -20,7 +18,7 @@ const CartWidget = () => {
     };
 
     return (
-    
+        
      <div >
          <ShoppingCartIcon
             className='boton'
@@ -64,13 +62,12 @@ const CartWidget = () => {
                     </div>
                     )
                 })}  
-                
-                   
+                 
             </div>            
         </Menu>    
-    </div>       
+     </div>       
           
-        )
+    )
     }
     
     export default CartWidget

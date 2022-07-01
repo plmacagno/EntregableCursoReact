@@ -15,14 +15,9 @@ const Footer = () => {
                 <InstagramIcon />
                 <p> @gaema.ok</p>
             </div>
-
            
         </div>
-    
-
     )
-
-
 }
 
 export default Footer

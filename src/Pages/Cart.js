@@ -10,19 +10,16 @@ import { addDoc, collection } from 'firebase/firestore';
 import db from '../components/Data/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
-
 let date = new Date().toDateString();
 console.log(date);
 
 const Cart = () => {
     const { cart, totalPrice, deleteItem, clearCart} = useContext(CartContext)
     const [showModal, setShowModal] = useState(false);   
-    
     const [formValue, setFormValue] = useState ({
         name:' ',
         phone:' ',
         email:' '
-
     })
 
     const [order, setOrder] = useState({
@@ -39,8 +36,6 @@ const Cart = () => {
         fecha: date
     })
 
-
-        
     const [sucess, setSuccess] = useState()
     const navigate = useNavigate()
 
@@ -67,9 +62,9 @@ const Cart = () => {
       
     }
 
-    
-    return (
-        
+     if (cart.length !== 0){
+         return (
+            
         <Container className='container-general'>
        
         <h2 className='titulo'>CHECKOUT</h2>
@@ -83,7 +78,7 @@ const Cart = () => {
             </div>
             {cart.map( (item)  => {
                 const {titulo, imagen, precio, id, cantidad} = item
-                 return(
+                return(
                 
                 <div className="cart-table__content" key={id}>
                     <div className="cart-table__content-img">
@@ -109,10 +104,9 @@ const Cart = () => {
 
              )
         })}
-
+            
             <div className="cart-footer">
                 <Button className="btn-custom" ><Link to='/products/box'>Continuar comprando</Link></Button>
-                
                 <div className="cart-checkout-details" >
                     <div className="cart-checkout__subtotal">
                         <p>Subtotal</p>
@@ -122,11 +116,11 @@ const Cart = () => {
                         <p>Total</p>
                         <span>$ {totalPrice}</span>
                     </div>
-                    <Button className="btn-custom" onClick={() => setShowModal(true)}>Completar Compra</Button>
+                    <Button className="btn-custom" onClick={() => setShowModal(true) }>Completar Compra</Button>
                 </div>
             </div>
         </div>
-        
+            
         <Modal  title={sucess ? "COMPRA CONFIRMADA!" : "POR FAVOR CONFIRME SU COMPRA"} open={showModal} handleClose={() => setShowModal(false)}>
             {sucess ? (
                 <div>
@@ -164,11 +158,13 @@ const Cart = () => {
                 />
                 <Button type="submit">Enviar</Button> 
             </form>
-         )}    
+         )} 
         </Modal>
         
         </Container>
-    )
-}
+        
+       )}
+          
+  }
 
 export default Cart

@@ -10,26 +10,19 @@ import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
 
 
-
 const ItemDetail = ({data}) => {
 
     const { addToCart, isInCart, deleteItem } = useContext(CartContext)
-//    const [showButton, setShowButton] = useState (false)
 
     const sendItemToCart = (qty) => {
       addToCart({...data, cantidad: qty})
     }
-    
-    
-     
     
      return (
       
         <div className='mas-info'>
             <h2>INFORMACION DETALLADA DEL PRODUCTO</h2>
             
-          
-
             <Card sx={{ maxWidth: 880 }}>
             
                 <CardMedia 
@@ -46,8 +39,7 @@ const ItemDetail = ({data}) => {
                   <Typography variant="body2">
                     {data.descr}
                   </Typography>
-                
-                
+                                
                 {isInCart(data.id) ? (<Button variant='outlined' onClick={() => {deleteItem(data.id)}}>Borrar Producto</Button>) : 
                   (<ItemCount
                   stock={data.stock}
@@ -58,9 +50,9 @@ const ItemDetail = ({data}) => {
                   )}
 
                 <Button  variant='outlined' ><Link to='/products/box'>Continuar comprando</Link></Button>
-                <Button variant='outlined'><Link to='/cart'>Ir al Carrito</Link></Button>
-                
               
+                <Button variant='outlined'><Link to='/cart'>Ir al Carrito</Link></Button> 
+
               </CardContent> 
               
            </Card>     

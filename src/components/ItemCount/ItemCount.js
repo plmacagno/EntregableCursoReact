@@ -3,10 +3,7 @@ import Button from '@mui/material/Button';
 import { useState} from 'react';
 import { CardActions } from '@mui/material';
 
-
-
 const ItemCount = ( {stock, onAdd }  ) => {
-    
   
    const [count, setCount] = useState(1);
    const addCount = () =>{
